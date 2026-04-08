@@ -1,10 +1,12 @@
 import { cn } from "@/lib/cn";
+import { ReactNode } from "react";
+import { IconType } from "react-icons";
 
 type ButtonVariant = "default" | "black" | "white";
 type IconBG = "white" | "black";
 type ButtonProps = {
     text: string;
-    icon: React.ReactNode;
+    icon: ReactNode;
     variant?: ButtonVariant;
     className?: string;
     iconClassName?: IconBG;

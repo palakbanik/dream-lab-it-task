@@ -1,11 +1,10 @@
 import { PiArrowRightBold, PiHeadphonesBold } from "react-icons/pi";
 import { FaCheck } from "react-icons/fa";
-import { IconType } from "react-icons";
 
-export type Feature = {
-    title: string;
-    icon: IconType;
-};
+// export type Feature = {
+//     title: string;
+//     icon: IconType;
+// };
 
 export const heroData = {
     title: {
@@ -31,10 +30,10 @@ export const heroData = {
     },
 };
 
-export const featureData: Feature[] = [
-    { title: "Reduce preparation\ntime by up to 70%", icon: FaCheck },
-    { title: "Reduce manual\nreporting by 85%", icon: FaCheck },
-    { title: "Enable real-time\noperational intelligence", icon: FaCheck },
+export const featureData = [
+    { title: "Reduce preparation\ntime by up to 70%" },
+    { title: "Reduce manual\nreporting by 85%" },
+    { title: "Enable real-time\noperational intelligence" },
 ];
 
 export const whoWeAreData = {
