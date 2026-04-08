@@ -1,26 +1,61 @@
 @import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* Base */
+    --black: #000000;
+    --background: #0a0a0f;
+    --foreground: #ffffff;
+    --pink: #ff09f4;
+    --dark-pink: #35254a00;
+    --accent-aqua: #00dbde;
+    --accent-green: #05e388;
+    --accent-light-blue: #00d1ff;
+    --accent-dark-blue: #100c29;
+    --accent-blue: #2d7fff;
+    --accent-yellow: #fce172;
+    --muted: #100c29;
+    --muted-foreground-primary: #b2b2b2;
+    --muted-foreground-secondary: #c1c1c1;
+    /* card gradient */
+    --card-gradient-start: #252525;
+    --card-gradient-end: #050505;
+
+    /* Border */
+    --border: #2a2740;
+
+    /* Gradient stops */
+    --gradient-purple-start: #561eab;
+    --gradient-purple-end: #3b0764;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+    /* colors */
+    --color-black: var(--black);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-pink: var(--pink);
+    --color-dark-pink: var(--dark-pink);
+    --color-accent-aqua: var(--accent-aqua);
+    --color-accent-green: var(--accent-green);
+    --color-accent-light-blue: var(--accent-light-blue);
+    --color-accent-dark-blue: var(--accent-dark-blue);
+    --color-accent-blue: var(--accent-blue);
+    --color-accent-yellow: var(--accent-yellow);
+    --color-muted: var(--muted);
+    --color-muted-foreground-primary: var(--muted-foreground-primary);
+    --color-muted-foreground-secondary: var(--muted-foreground-secondary);
+    --color-card-gradient-start: var(--card-gradient-start);
+    --color-card-gradient-end: var(--card-gradient-end);
+    --color-border: var(--border);
+    --color-gradient-purple-start: var(--gradient-purple-start);
+    --color-gradient-purple-end: var(--gradient-purple-end);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    /* fonts */
+    --font-sans: var(--font-open-sans);
+    --font-mono: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-open-sans);
 }
