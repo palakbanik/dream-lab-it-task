@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Open_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/header/Header";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -27,7 +28,10 @@ export default function RootLayout({
             lang="en"
             className={`${inter.variable} ${openSans.variable} h-full antialiased`}
         >
-            <body className="min-h-full">{children}</body>
+            <body className="min-h-full overflow-x-hidden">
+                <Header />
+                {children}
+            </body>
         </html>
     );
 }

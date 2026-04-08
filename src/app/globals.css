@@ -1,10 +1,11 @@
 @import "tailwindcss";
 :root {
     /* Base */
-    --black: #000000;
+    --nav-bg: #1a1a1a;
+    --custom-black: #000000;
     --background: #0a0a0f;
     --foreground: #ffffff;
-    --pink: #ff09f4;
+    --accent-pink: #ff09f4;
     --dark-pink: #35254a00;
     --accent-aqua: #00dbde;
     --accent-green: #05e388;
@@ -29,10 +30,11 @@
 
 @theme inline {
     /* colors */
-    --color-black: var(--black);
+    --color-nav-bg: var(--nav-bg);
+    --color-custom-black: var(--custom-black);
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --color-pink: var(--pink);
+    --color-accent-pink: var(--accent-pink);
     --color-dark-pink: var(--dark-pink);
     --color-accent-aqua: var(--accent-aqua);
     --color-accent-green: var(--accent-green);
