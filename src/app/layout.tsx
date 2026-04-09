@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header/Header";
+import Footer from "@/components/layout/footer/footer";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -31,6 +32,7 @@ export default function RootLayout({
             <body>
                 <Header />
                 {children}
+                <Footer />
             </body>
         </html>
     );

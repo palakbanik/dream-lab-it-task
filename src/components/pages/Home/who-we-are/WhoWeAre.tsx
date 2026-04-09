@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function WhoWeAre() {
     return (
-        <section id="about" className="relative py-14 sm:py-12.5">
+        <section id="about" className="relative sm:py-12.5">
             <Container className="max-w-255">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-17">
                     {/* Image */}
