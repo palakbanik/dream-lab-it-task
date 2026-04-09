@@ -29,9 +29,11 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="w-full fixed inset-0 px-4 md:px-6 lg:px-8 xl:px-10 z-999">
+        <header className="w-full fixed top-0 left-0 px-4 md:px-6 lg:px-8 xl:px-10 z-999">
             <div className="relative">
-                <div className="w-full max-w-360 mx-auto mt-4 md:mt-6 lg:mt-8 px-5 md:px-8 xl:px-10 py-2.5 md:py-3.5 lg:py-5 flex items-center justify-between rounded-full bg-nav-bg backdrop-blur-lg shadow-[inset_3px_3px_0px_-3px_rgba(0,0,0,0.5),inset_-2px_-2px_1px_-2px_rgba(179,179,179,1)]">
+                <div
+                    className={`w-full max-w-360 mx-auto mt-4 md:mt-6 lg:mt-8 px-5 md:px-8 xl:px-10 py-2.5 md:py-3.5 lg:py-5 flex items-center justify-between rounded-full ${pathname === "/" ? "bg-nav-bg/30" : "bg-nav-bg/70"} backdrop-blur-xl shadow-[inset_3px_3px_0px_-3px_rgba(0,0,0,0.5),inset_-2px_-2px_1px_-2px_rgba(179,179,179,1)]`}
+                >
                     {/* logo */}
                     <Link href={"/"}>
                         <Image
@@ -92,11 +94,9 @@ export default function Header() {
                         </div>
 
                         {/* cta button */}
-                        <Button
-                            text="Request a Consultation"
-                            icon={<PiHeadphonesBold />}
-                            className="py-1.5"
-                        />
+                        <Button icon={<PiHeadphonesBold />} className="py-1.5">
+                            Request a Consultation
+                        </Button>
                     </div>
                 </div>
 
@@ -115,11 +115,9 @@ export default function Header() {
                                 </li>
                             ))}
                         </ul>
-                        <Button
-                            text="Request a Consultation"
-                            icon={<PiHeadphonesBold />}
-                            className="py-1.5"
-                        />
+                        <Button icon={<PiHeadphonesBold />} className="py-1.5">
+                            Request a Consultation
+                        </Button>
                     </nav>
                 </div>
             </div>

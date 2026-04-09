@@ -28,7 +28,7 @@ export default function RootLayout({
             lang="en"
             className={`${inter.variable} ${openSans.variable} h-full antialiased`}
         >
-            <body className="min-h-full overflow-x-hidden">
+            <body>
                 <Header />
                 {children}
             </body>

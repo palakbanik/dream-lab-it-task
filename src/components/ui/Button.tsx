@@ -1,11 +1,10 @@
 import { cn } from "@/lib/cn";
 import { ReactNode } from "react";
-import { IconType } from "react-icons";
 
 type ButtonVariant = "default" | "black" | "white";
 type IconBG = "white" | "black";
 type ButtonProps = {
-    text: string;
+    children: ReactNode;
     icon: ReactNode;
     variant?: ButtonVariant;
     className?: string;
@@ -24,7 +23,7 @@ const iconBGClasses: Record<IconBG, string> = {
 };
 
 export default function Button({
-    text,
+    children,
     icon,
     variant = "default",
     className,
@@ -39,7 +38,7 @@ export default function Button({
                 className,
             )}
         >
-            <span>{text}</span>
+            <span>{children}</span>
             <span>
                 {icon && (
                     <span

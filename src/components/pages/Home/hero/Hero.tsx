@@ -3,69 +3,72 @@ import Container from "@/components/shared/Container";
 import FeatureCard from "@/components/shared/FeatureCard";
 import Button from "@/components/ui/Button";
 import { featureData, heroData } from "@/data/data";
-import { FaCheck } from "react-icons/fa";
+import { FaArrowRight, FaCheck } from "react-icons/fa";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0">
+        <section
+            style={{
+                backgroundImage: 'url("/home-hero-bg.svg")',
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+                backgroundRepeat: "no-repeat",
+            }}
+            className="relative min-h-screen overflow-hidden"
+        >
+            {/* background blob */}
+            <div className="absolute -top-1/2 left-1/2 -translate-x-1/2 w-256.5 h-162 bg-accent-pink/50 rounded-full blur-[200px] -z-10 pointer-events-none" />
+            <div className="absolute -top-1/2 left-1/2 -translate-x-1/2 w-391 h-162 bg-accent-light-blue/30 rounded-full blur-[150px] -z-11 pointer-events-none" />
 
-                {/* Right big orb */}
-                {/* <div className="absolute -right-[240px] top-[90px] h-[560px] w-[560px] rounded-full border border-[#B300FF]/40 bg-gradient-to-br from-[#B300FF]/15 via-transparent to-[#FF2BD6]/10" />
-                <div className="absolute -right-[290px] top-[45px] h-[660px] w-[660px] rounded-full bg-[#B300FF]/10 blur-[60px]" /> */}
+            <Container className="relative pt-18 sm:pt-24 2xl:pt-56.25 2xl:pb-20">
+                {/* text and btn  */}
+                <div className="mx-auto max-w-240 text-center relative">
+                    {/* circle blob */}
+                    <div className="w-15.75 h-15.75 bg-linear-to-tl from-custom-black to-purple-800/90 rounded-full flex items-center justify-center mx-auto mt-7.5 absolute -right-6 bottom-40 pointer-events-none -z-10" />
+                    <div className="w-11.25 h-11.25 bg-linear-to-tl from-custom-black to-accent-yellow/50 rounded-full flex items-center justify-center mx-auto mt-7.5 absolute left-0 bottom-8 pointer-events-none -z-10" />
 
-                {/* Floating dots */}
-                {/* <div className="absolute left-[12%] top-[310px] h-3 w-3 rounded-full bg-[#FFD24A]/60" />
-                <div className="absolute left-[75%] top-[270px] h-4 w-4 rounded-full bg-[#B300FF]/70" />
-                <div className="absolute left-[58%] top-[410px] h-2.5 w-2.5 rounded-full bg-white/20" /> */}
-            </div>
-
-            <Container className="relative pt-[72px] sm:pt-[96px] 2xl:pt-[225px]">
-                <div className="mx-auto max-w-[860px] text-center">
-                    <h1 className="text-balance text-[34px] font-semibold leading-[1.08] tracking-tight sm:text-[52px]">
-                        <span className="text-white">{heroData.title.a} </span>
-                        <span className="bg-gradient-to-r from-[#FF2BD6] to-[#B300FF] bg-clip-text text-transparent">
-                            {heroData.title.emphasis}
+                    {/* text content */}
+                    <h1 className="text-[34px] sm:text-[52px] 2xl:text-[70px] font-bold leading-[1.2] tracking-[-0.01px]">
+                        Operational{" "}
+                        <span className="bg-linear-to-r from-pink-400 to-accent-pink bg-clip-text text-transparent">
+                            Intelligence
                         </span>{" "}
-                        <span className="text-white">{heroData.title.b} </span>
-                        <span className="bg-gradient-to-r from-[#FFD24A] to-white bg-clip-text text-transparent">
-                            {heroData.title.highlight}
+                        and{" "}
+                        <span className="bg-linear-to-r from-accent-yellow to-accent-pink bg-clip-text text-transparent">
+                            AI Systems
                         </span>{" "}
-                        <span className="text-white">{heroData.title.c}</span>
+                        for Institutional Environments
                     </h1>
 
-                    <p className="mx-auto mt-5 max-w-[650px] text-sm leading-6 text-white/55 sm:text-[13px]">
+                    <p className="mx-auto mt-7.5 max-w-224.5 leading-[1.6] tracking-normal text-muted-foreground-primary font-normal text-sm sm:text-base lg:text-lg">
                         {heroData.description}
                     </p>
 
                     <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                        <a href={heroData.ctas.primary.href}>
-                            <Button
-                                text={heroData.ctas.primary.text}
-                                icon={<FaCheck />}
-                                className="py-1.5"
-                            />
+                        <a href={"/"}>
+                            <Button icon={<FaCheck />} className="py-1.5">
+                                {heroData.ctas.primary.text}
+                            </Button>
                         </a>
 
-                        <a href={heroData.ctas.secondary.href}>
+                        <a href={"/systems"}>
                             <Button
-                                text={heroData.ctas.secondary.text}
-                                icon={<FaCheck />}
+                                icon={<FaArrowRight />}
                                 className="py-1.5"
-                            />
+                                variant="white"
+                            >
+                                {heroData.ctas.secondary.text}
+                            </Button>
                         </a>
-                    </div>
-
-                    <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                        {featureData.map((f, idx) => (
-                            <FeatureCard key={idx} title={f.title} />
-                        ))}
                     </div>
                 </div>
-            </Container>
 
-            <div className="h-10 sm:h-16" />
+                <div className="2xl:mt-32 flex flex-col md:flex-row items-center justify-center gap-6">
+                    {featureData.map((feature, i) => (
+                        <FeatureCard key={i}>{feature.title}</FeatureCard>
+                    ))}
+                </div>
+            </Container>
         </section>
     );
 }

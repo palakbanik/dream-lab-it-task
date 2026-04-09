@@ -38,7 +38,7 @@ export const featureData = [
 
 export const whoWeAreData = {
     image: {
-        src: "/images/robot-hand.jpg",
+        src: "/images/robot-hand.png",
         alt: "Robotic hand holding a green sphere",
     },
     heading: "Who We Are",
