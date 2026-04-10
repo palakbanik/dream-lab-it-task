@@ -2,6 +2,8 @@ import { cn } from "@/lib/cn";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+import Heading from "../shared/Heading";
+import Button from "./Button";
 
 type Props = {
     title: string;
@@ -21,52 +23,53 @@ export default function CtaGradientCard({
     return (
         <div
             className={cn(
-                "rounded-2xl p-[1px]",
-                "bg-gradient-to-r from-accent-pink via-accent-blue to-accent-aqua",
+                "mx-auto max-w-285.5 2xl:rounded-[30px] bg-linear-to-r from-accent-pink/90 to-accent-aqua/90 ",
                 className,
             )}
         >
-            <div className="rounded-2xl bg-custom-black/25 backdrop-blur border border-white/10">
-                <div className="grid grid-cols-1 gap-5 p-5 sm:p-6 md:grid-cols-[1.2fr_1fr] md:items-center">
-                    {/* Left */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 2xl:gap-16 px-6 2xl:px-5.5 2xl:py-5 2xl:pl-10">
+                {/* Left */}
+                <div className="max-w-lg 2xl:space-y-7.5">
+                    <Heading className="2xl:text-[36px] leading-none font-extrabold">
+                        {title}
+                    </Heading>
+
                     <div>
-                        <h3 className="whitespace-pre-line text-xl sm:text-2xl font-semibold leading-tight">
-                            {title}
-                        </h3>
+                        {/* <Link
+                            href={href}
+                            className={cn(
+                                "inline-flex items-center gap-3 rounded-full",
+                                "bg-custom-black text-foreground",
+                                "border border-white/10 px-4 py-2 text-sm font-semibold",
+                                "hover:bg-custom-black/80 transition",
+                                "focus:outline-none focus:ring-2 focus:ring-accent-pink/40",
+                            )}
+                        >
+                            {buttonLabel}
+                            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/10">
+                                
+                            </span>
+                        </Link> */}
 
-                        <div className="mt-4">
-                            <Link
-                                href={href}
-                                className={cn(
-                                    "inline-flex items-center gap-3 rounded-full",
-                                    "bg-custom-black text-foreground",
-                                    "border border-white/10 px-4 py-2 text-sm font-semibold",
-                                    "hover:bg-custom-black/80 transition",
-                                    "focus:outline-none focus:ring-2 focus:ring-accent-pink/40",
-                                )}
-                            >
-                                {buttonLabel}
-                                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/10">
-                                    <FiArrowUpRight className="h-4 w-4" />
-                                </span>
-                            </Link>
-                        </div>
+                        <Button
+                            variant="black"
+                            iconVariant="white"
+                            icon={<FiArrowUpRight />}
+                        >
+                            Book for Consultation
+                        </Button>
                     </div>
+                </div>
 
-                    {/* Right image */}
-                    <div className="md:justify-self-end">
-                        <div className="relative w-full md:w-[280px] overflow-hidden rounded-xl border border-white/10 bg-white/5 aspect-[16/10]">
-                            <Image
-                                src={image.src}
-                                alt={image.alt}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 280px"
-                                priority={false}
-                            />
-                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-custom-black/20 via-transparent to-transparent" />
-                        </div>
-                    </div>
+                {/* Right image */}
+                <div>
+                    <Image
+                        src={image.src}
+                        alt={image.alt}
+                        className="object-cover rounded-[20px]"
+                        width={411}
+                        height={232}
+                    />
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 
-export default function Heading({
+export default function SubHeading({
     children,
     className,
 }: {
@@ -8,13 +8,13 @@ export default function Heading({
     className?: string;
 }) {
     return (
-        <h2
+        <h4
             className={cn(
-                "font-bold 2xl:text-[48px] lg:leading-[1.4] tracking-normal text-foreground",
+                "font-semibold 2xl:text-[24px] lg:leading-[1.4] tracking-normal text-foreground",
                 className,
             )}
         >
             {children}
-        </h2>
+        </h4>
     );
 }

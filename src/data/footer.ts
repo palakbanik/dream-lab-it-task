@@ -70,6 +70,6 @@ export const footerData: FooterData = {
         title: "Transform Your Operations\nwith Intelligence",
         buttonLabel: "Book for Consultation",
         href: "#",
-        image: { src: "/privacy/cta.jpg", alt: "AI in operations" },
+        image: { src: "/images/footer-robot.png", alt: "AI in operations" },
     },
 };
