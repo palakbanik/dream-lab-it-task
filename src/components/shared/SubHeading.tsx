@@ -10,7 +10,7 @@ export default function SubHeading({
     return (
         <h4
             className={cn(
-                "font-semibold 2xl:text-[24px] lg:leading-[1.4] tracking-normal text-foreground",
+                "font-semibold text-lg md:text-xl lg:text-2xl leading-normal lg:leading-[1.4] tracking-normal text-foreground",
                 className,
             )}
         >

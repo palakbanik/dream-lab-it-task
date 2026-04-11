@@ -10,7 +10,7 @@ export default function Heading({
     return (
         <h2
             className={cn(
-                "font-bold 2xl:text-[48px] lg:leading-[1.4] tracking-normal text-foreground",
+                "font-bold text-2xl sm:text-[36px] 2xl:text-[48px] lg:leading-[1.4] tracking-normal text-foreground",
                 className,
             )}
         >
