@@ -18,46 +18,47 @@ export default function Footer({ className, showCta = true }: Props) {
     return (
         <footer className="relative pt-[246px] bg-linear-to-b from-background via-gradient-purple-start/50 to-gradient-purple-start/85 ">
             {/* CTA */}
-            <div className="w-full absolute -top-30 left-0">
-                <CtaGradientCard
-                    className={cn("mx-auto max-w-5xl")}
-                    title={data.cta.title}
-                    buttonLabel={data.cta.buttonLabel}
-                    href={data.cta.href}
-                    image={data.cta.image}
-                />
+            <div className="w-full absolute -top-36 sm:-top-6 md:-top-10 xl:-top-30 left-0">
+                <Container>
+                    <CtaGradientCard
+                        title={data.cta.title}
+                        buttonLabel={data.cta.buttonLabel}
+                        href={data.cta.href}
+                        image={data.cta.image}
+                    />
+                </Container>
             </div>
 
             {/* main footer content */}
             <div className="relative overflow-hidden">
                 {/* footer content */}
-                <Container className="max-w-[1142px]">
-                    <div className=" 2xl:pb-[105px]">
-                        <div className="flex items-start justify-between">
+                <Container className="max-w-[1142px] lg:px-0">
+                    <div className="pb-10 2xl:pb-[105px]">
+                        <div className="flex flex-col md:flex-row items-start justify-between gap-8">
                             {/* Brand */}
-                            <div className="max-w-[265px] 2xl:space-y-5 ">
+                            <div className="max-w-[265px] shrink-0 space-y-3 2xl:space-y-5 ">
                                 <Heading className="2xl:text-[30px] font-extrabold">
                                     {data.brand.title}
                                 </Heading>
-                                <Paragraph className="text-[15px] 2xl:leading-[1.5] tracking-tight">
+                                <Paragraph className="sm:text-sm lg:text-[16px] 2xl:leading-normal tracking-tight">
                                     {data.brand.description}
                                 </Paragraph>
                             </div>
 
                             {/* Columns */}
-                            <div className="min-w-[562px] flex justify-between">
+                            <div className="min-w-[562px] flex flex-col md:flex-row justify-between gap-4">
                                 {data.columns.map((col) => (
                                     <div
                                         key={col.title}
                                         aria-label={col.title}
-                                        className="space-y-4"
+                                        className="space-y-2 md:space-y-4"
                                     >
                                         <SubHeading>{col.title}</SubHeading>
-                                        <ul className="space-y-3">
+                                        <ul className="space-y-1.5 md:space-y-3">
                                             {col.links.map((l) => (
                                                 <li
                                                     key={l.href}
-                                                    className="text-sm text-muted-foreground-secondary hover:text-accent-aqua transition hover:translate-x-3"
+                                                    className="text-xs sm:text-sm text-muted-foreground-secondary hover:text-accent-aqua transition hover:translate-x-3"
                                                 >
                                                     <Link href={l.href}>
                                                         {l.label}
@@ -76,17 +77,16 @@ export default function Footer({ className, showCta = true }: Props) {
                 <div className="border-t border-white/10" />
 
                 {/* copyright */}
-                <Container className="max-w-[1142px]">
-                    <div className="flex flex-col gap-3 py-4 text-xs sm:flex-row sm:items-center sm:justify-between">
+                <Container className="max-w-[1142px] lg:px-0">
+                    <div className="flex flex-col gap-3 py-4 text-xs sm:flex-row items-center sm:justify-between">
                         <div className="flex flex-wrap items-center gap-6">
                             {data.bottomLinks.map((l) => (
-                                <Link
+                                <span
                                     key={l.href}
-                                    href={l.href}
-                                    className="text-sm leading-none text-muted-foreground-secondary hover:text-accent-aqua hover:scale-105 transition"
+                                    className="text-xs md:text-sm leading-none text-muted-foreground-secondary hover:text-accent-aqua hover:scale-105 transition"
                                 >
-                                    {l.label}
-                                </Link>
+                                    <Link href={l.href}>{l.label}</Link>
+                                </span>
                             ))}
                         </div>
 

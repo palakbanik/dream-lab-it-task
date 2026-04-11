@@ -36,7 +36,7 @@ export default function Button({
         <button
             type={type}
             className={cn(
-                "flex items-center gap-2.5 px-4 sm:px-6.25 lg:px-4 2xl:px-6.25 py-1.5 sm:py-2.5 lg:py-1.5 2xl:py-2.5 rounded-full font-semibold text-xs sm:text-base lg:text-sm 2xl:text-base leading-4 cursor-pointer group border-2 border-transparent hover:border-2  transition-colors duration-500",
+                "flex items-center gap-2.5 px-4 sm:px-6.25 lg:px-4 xl:px-6.25 py-1.5 sm:py-2.5 lg:py-1.5 xl:py-2.5 rounded-full font-semibold text-xs sm:text-sm md:text-base lg:text-sm 2xl:text-base leading-4 cursor-pointer group border-2 border-transparent hover:border-2  transition-colors duration-500",
                 variantClasses[variant],
                 className,
             )}
