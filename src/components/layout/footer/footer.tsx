@@ -1,18 +1,12 @@
 import Link from "next/link";
 import { footerData } from "@/data/footer";
-import CtaGradientCard from "@/components/ui/CtaGradientCard";
-import { cn } from "@/lib/cn";
 import Heading from "@/components/shared/Heading";
 import Paragraph from "@/components/shared/Paragraph";
 import SubHeading from "@/components/shared/SubHeading";
 import Container from "@/components/shared/Container";
+import CtaGradientCard from "@/components/shared/CtaGradientCard";
 
-type Props = {
-    className?: string;
-    showCta?: boolean; // যদি page section এ CTA already থাকে, false করুন
-};
-
-export default function Footer({ className, showCta = true }: Props) {
+export default function Footer() {
     const data = footerData;
 
     return (

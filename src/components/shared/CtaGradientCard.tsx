@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import Heading from "../shared/Heading";
-import Button from "./Button";
+import Button from "../ui/Button";
 
 type Props = {
     title: string;
@@ -15,8 +15,7 @@ type Props = {
 
 export default function CtaGradientCard({
     title,
-    buttonLabel,
-    href,
+
     image,
     className,
 }: Props) {
@@ -29,19 +28,17 @@ export default function CtaGradientCard({
         >
             <div className="flex flex-col sm:flex-row items-center justify-between gap-8 md:gap-12 2xl:gap-16 p-3 sm:px-5 xl:px-5.5 xl:py-5 xl:pl-10">
                 {/* Left */}
-                <div className="flex-1 max-w-lg space-y-4 2xl:space-y-7.5">
-                    <Heading className="text-lg sm:text-xl md:text-2xl lg:text-[28px] xl:text-[36px] leading-normal md:leading-normal font-extrabold">
+                <div className="flex-1 lg:flex-2 max-w-lg space-y-4 2xl:space-y-7.5">
+                    <Heading className="text-lg sm:text-[21px] md:text-[24px] lg:text-[28px] xl:text-[30px] 2xl:text-[36px] leading-normal md:leading-normal font-extrabold">
                         {title}
                     </Heading>
-                    <div>
-                        <Button
-                            variant="black"
-                            iconVariant="white"
-                            icon={<FiArrowUpRight />}
-                        >
-                            Book for Consultation
-                        </Button>
-                    </div>
+                    <Button
+                        variant="black"
+                        iconVariant="white"
+                        icon={<FiArrowUpRight />}
+                    >
+                        Book for Consultation
+                    </Button>
                 </div>
 
                 {/* Right image */}

@@ -44,28 +44,21 @@ export default function TermsOfUse() {
                     </div>
                 </div>
 
-                <div>
-                    <div className="space-y-2 md:space-y-3 xl:space-y-5">
-                        <ul className="space-y-2 md:space-y-3 xl:space-y-5">
-                            {data.sections.map((section, i) => (
-                                <li
-                                    key={i}
-                                    className="space-y-2 md:space-y-3 xl:space-y-3.5"
-                                >
-                                    <SubHeading>{section.title}</SubHeading>
-                                    <div>
-                                        {section.blocks.map((block, i) => (
-                                            <LegalBlockRenderer
-                                                key={i}
-                                                block={block}
-                                            />
-                                        ))}
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+                <ul className="space-y-2 md:space-y-3 xl:space-y-5">
+                    {data.sections.map((section, i) => (
+                        <li
+                            key={i}
+                            className="space-y-2 md:space-y-3 xl:space-y-3.5"
+                        >
+                            <SubHeading>{section.title}</SubHeading>
+                            <div>
+                                {section.blocks.map((block, i) => (
+                                    <LegalBlockRenderer key={i} block={block} />
+                                ))}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
             </Container>
         </section>
     );
