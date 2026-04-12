@@ -1,8 +1,8 @@
 import Image from "next/image";
-import type { OperationItem, OperationBlock } from "@/data/operations";
+import type { CaseStudyBlock, CaseStudyItem } from "@/data/case-study";
 import { cn } from "@/lib/cn";
 
-function Block({ block }: { block: OperationBlock }) {
+function Block({ block }: { block: CaseStudyBlock }) {
     if (block.type === "paragraph") {
         return (
             <p className="text-sm leading-6 text-muted-foreground-primary">
@@ -44,7 +44,7 @@ function Block({ block }: { block: OperationBlock }) {
     );
 }
 
-export default function OperationDetails({ item }: { item: OperationItem }) {
+export default function CaseStudyDetails({ item }: { item: CaseStudyItem }) {
     return (
         <section className="py-12">
             <div className="mx-auto max-w-3xl px-4">
