@@ -5,8 +5,8 @@
     --custom-black: #000000;
     --background: #0a0a0f;
     --foreground: #ffffff;
-    --accent-pink: #ff09f4;
     --dark-pink: #35254a00;
+    --accent-pink: #ff09f4;
     --accent-aqua: #00dbde;
     --accent-green: #05e388;
     --accent-light-blue: #00d1ff;
@@ -19,6 +19,9 @@
     /* card gradient */
     --card-gradient-start: #252525;
     --card-gradient-end: #050505;
+
+    --card-gray-btn-primary: #353535;
+    --card-gray-btn-secondary: #5b5b5b;
 
     /* Border */
     --border: #2a2740;
@@ -45,6 +48,8 @@
     --color-muted: var(--muted);
     --color-muted-foreground-primary: var(--muted-foreground-primary);
     --color-muted-foreground-secondary: var(--muted-foreground-secondary);
+    --color-card-gray-btn-primary: var(--card-gray-btn-primary);
+    --color-card-gray-btn-secondary: var(--card-gray-btn-secondary);
     --color-card-gradient-start: var(--card-gradient-start);
     --color-card-gradient-end: var(--card-gradient-end);
     --color-border: var(--border);

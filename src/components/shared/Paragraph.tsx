@@ -10,7 +10,7 @@ export default function Paragraph({
     return (
         <p
             className={cn(
-                "font-normal text-xs md:text-sm lg:text-base leading-normal lg:leading-6 tracking-normal text-muted-foreground-secondary",
+                "font-normal text-xs md:text-sm xl:text-base leading-normal lg:leading-6 tracking-normal text-muted-foreground-secondary",
                 className,
             )}
         >
