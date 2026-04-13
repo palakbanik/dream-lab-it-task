@@ -1,51 +1,59 @@
 import Image from "next/image";
 import { leadershipData } from "@/data/leadership";
+import Heading from "@/components/shared/Heading";
+import Paragraph from "@/components/shared/Paragraph";
+import Container from "@/components/shared/Container";
+import SubHeading from "@/components/shared/SubHeading";
 
 export default function LeadershipSection() {
-    const { title, description, leaders } = leadershipData;
+    const { description, leaders } = leadershipData;
 
     return (
-        <section className="relative py-10">
-            <div className="mx-auto w-full max-w-5xl px-4">
-                <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1.9fr] lg:items-start">
-                    <div>
-                        <h2 className="text-2xl font-semibold">{title}</h2>
-                        <p className="mt-3 whitespace-pre-line text-sm leading-6 text-muted-foreground-primary">
+        <section className="xl:pt-[110px]">
+            <Container className="relative border">
+                {/* blobs */}
+                <div className="w-[418px] aspect-square bg-accent-green/30 blur-[100px] rounded-full absolute -bottom-1/3 xl:left-26 -z-10 pointer-events-none" />
+                <div className="w-[418px] aspect-square bg-accent-light-blue/40 blur-[100px] rounded-full absolute -bottom-2/4 -left-10 -z-10 pointer-events-none" />
+
+                {/* main content */}
+                <div className="flex flex-col lg:flex-row justify-between lg:px-10">
+                    <div className="space-y-3 lg:space-y-5 max-w-[372px]">
+                        <Heading className="mt-4 xl:mt-[30px]  text-lg sm:text-2xl 2xl:text-[42px] font-semibold leading-snug xl:leading-[1.2]">
+                            Leadership
+                        </Heading>
+                        <Paragraph className="whitespace-pre-line">
                             {description}
-                        </p>
+                        </Paragraph>
                     </div>
 
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                         {leaders.map((p) => (
                             <div
                                 key={p.name}
-                                className="rounded-2xl border border-border/60 bg-white/5 overflow-hidden"
+                                className="max-w-[256px] space-y-[28px]"
                             >
-                                <div className="relative aspect-[4/5] w-full">
+                                <div className="relative w-[256px] h-[303px] overflow-hidden">
                                     <Image
                                         src={p.imageSrc}
                                         alt={p.name}
                                         fill
                                         className="object-cover"
-                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 260px"
-                                        priority={false}
                                     />
-                                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-custom-black/90 to-transparent" />
                                 </div>
 
-                                <div className="p-4">
-                                    <p className="text-sm font-semibold">
+                                <div className="space-y-2">
+                                    <SubHeading className="font-bold lg:text-xl">
                                         {p.name}
-                                    </p>
-                                    <p className="mt-1 text-xs text-muted-foreground-secondary">
+                                    </SubHeading>
+                                    <Paragraph className="whitespace-pre-wrap">
                                         {p.role}
-                                    </p>
+                                    </Paragraph>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

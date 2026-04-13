@@ -1,7 +1,7 @@
 export type Leader = {
     name: string;
     role: string;
-    imageSrc: string; // public folder path
+    imageSrc: string;
 };
 
 export const leadershipData = {
@@ -11,18 +11,18 @@ export const leadershipData = {
     leaders: [
         {
             name: "Reem Aljeali",
-            role: "Director, Operations",
-            imageSrc: "/team/leader-1.jpg",
+            role: "Director, Operations\n\nOperational Intelligence and Systems Strategist",
+            imageSrc: "/images/leaders/leader-one.jpg",
         },
         {
             name: "Mohammed Alyfatai",
-            role: "Head of Strategy",
-            imageSrc: "/team/leader-2.jpg",
+            role: "Head of Strategy\n\nIntelligent Systems and AI Infrastructure Architect",
+            imageSrc: "/images/leaders/leader-two.jpg",
         },
         {
             name: "Yasir Arafat",
-            role: "Technology Advisor",
-            imageSrc: "/team/leader-3.jpg",
+            role: "Technology Advisor\n\nIntelligent Systems and AI Infrastructure Architect",
+            imageSrc: "/images/leaders/leader-three.jpg",
         },
     ] satisfies Leader[],
 };
