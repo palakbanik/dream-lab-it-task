@@ -1,34 +1,73 @@
+"use client";
+import Heading from "@/components/shared/Heading";
 import { faqData } from "@/data/faq";
-import { FiPlus } from "react-icons/fi";
+import { useState } from "react";
 
 export default function FaqSection() {
-    const { title, items } = faqData;
+    const { items } = faqData;
+    const [bgAccording, setBgAccording] = useState(null);
+
+    const handleBgAccording = (index) =>
+        setBgAccording((prevIndex) => (prevIndex === index ? null : index));
 
     return (
-        <section className="py-12">
-            <div className="mx-auto w-full max-w-5xl px-4">
-                <h2 className="text-center text-2xl font-semibold">{title}</h2>
+        <section className="xl:mt-[160px]">
+            <div className="mx-auto w-full max-w-5xl px-4 text-center">
+                <Heading>Frequently Asked Questions</Heading>
 
                 <div className="mx-auto mt-7 max-w-3xl space-y-3">
-                    {items.map((it) => (
-                        <details
-                            key={it.question}
-                            className="group rounded-2xl border border-border/60 bg-white/5 px-5 py-4"
+                    {items.map((it, i) => (
+                        <article
+                            key={i}
+                            className="bg-[#e5eaf2] dark:bg-transparent rounded"
                         >
-                            <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                                <span className="text-sm font-semibold">
+                            <div
+                                className={`${it === i ? "rounded-t-sm" : "rounded"} flex gap-2 cursor-pointer items-center justify-between dark:bg-slate-800 w-full bg-gray-700 p-3`}
+                                onClick={() => handleBgAccording(i)}
+                            >
+                                <h2
+                                    className={`dark:text-[#abc2d3] text-white font-[600] text-[1.2rem]`}
+                                >
                                     {it.question}
-                                </span>
-
-                                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border/60 bg-custom-black/30 transition group-open:bg-white/10">
-                                    <FiPlus className="h-4 w-4 transition-transform duration-200 group-open:rotate-45" />
-                                </span>
-                            </summary>
-
-                            <div className="mt-3 text-sm leading-6 text-muted-foreground-primary">
-                                {it.answer}
+                                </h2>
+                                <svg
+                                    className="dark:fill-[#abc2d3] fill-[#ffffff] shrink-0 ml-8"
+                                    width="16"
+                                    height="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        y="7"
+                                        width="16"
+                                        height="2"
+                                        rx="1"
+                                        className={`transform origin-center transition duration-200 ease-out ${
+                                            bgAccording === i && "!rotate-180"
+                                        }`}
+                                    />
+                                    <rect
+                                        y="7"
+                                        width="16"
+                                        height="2"
+                                        rx="1"
+                                        className={`transform origin-center rotate-90 transition duration-200 ease-out ${
+                                            bgAccording === i && "!rotate-180"
+                                        }`}
+                                    />
+                                </svg>
                             </div>
-                        </details>
+                            <div
+                                className={`grid transition-all duration-300 dark:bg-slate-900 overflow-hidden ease-in-out bg-gray-100 ${
+                                    bgAccording === i
+                                        ? "grid-rows-[1fr] opacity-100 px-3 py-3"
+                                        : "grid-rows-[0fr] opacity-0 px-3"
+                                }`}
+                            >
+                                <div className="text-[#424242] dark:text-[#abc2d3] text-[0.9rem] overflow-hidden">
+                                    {it.answer}
+                                </div>
+                            </div>
+                        </article>
                     ))}
                 </div>
             </div>
