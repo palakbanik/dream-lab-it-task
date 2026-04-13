@@ -7,10 +7,9 @@ export function Textarea({
 }: React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
     return (
         <textarea
+            rows={1}
             className={cn(
-                "w-full min-h-[120px] resize-none rounded-xl bg-white/5 border border-border/60 px-4 py-3 text-sm text-foreground",
-                "placeholder:text-muted-foreground-primary/80",
-                "focus:outline-none focus:ring-2 focus:ring-accent-aqua/30 focus:border-accent-aqua/40",
+                "w-full max-h-12 resize-none border-card-gray-btn-secondary border-b outline-none py-3 text-foreground placeholder:text-muted-foreground-primary/80 focus:border-foreground transition-colors duration-300 overflow-hidden",
                 className,
             )}
             {...props}

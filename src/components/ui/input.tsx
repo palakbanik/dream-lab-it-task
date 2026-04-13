@@ -1,5 +1,4 @@
 import { cn } from "@/lib/cn";
-import * as React from "react";
 
 export function Input({
     className,
@@ -8,9 +7,7 @@ export function Input({
     return (
         <input
             className={cn(
-                "w-full rounded-xl bg-white/5 border border-border/60 px-4 py-3 text-sm text-foreground",
-                "placeholder:text-muted-foreground-primary/80",
-                "focus:outline-none focus:ring-2 focus:ring-accent-aqua/30 focus:border-accent-aqua/40",
+                "min-h-12 border-card-gray-btn-secondary border-b outline-none w-full py-3 text-foreground placeholder:text-muted-foreground-primary/80 focus:border-foreground transition-colors duration-300",
                 className,
             )}
             {...props}

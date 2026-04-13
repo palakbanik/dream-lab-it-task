@@ -27,6 +27,27 @@ export type ContactField =
           rows?: number;
       };
 
+export const contactInfo = [
+    {
+        src: "/icons/phone.svg",
+        label: "+966 000 115666",
+    },
+    {
+        src: "/icons/mail.svg",
+        label: "info@beyondcode.ae",
+    },
+    {
+        src: "/icons/location.svg",
+        label: "Abu Dhabi, UAE",
+    },
+];
+
+export const contactSocialLinks = [
+    { href: "/", src: "/icons/instagram.svg" },
+    { href: "/", src: "/icons/facebook.svg" },
+    { href: "/", src: "/icons/tiktok.svg" },
+];
+
 export const contactSectionData = {
     left: {
         title: "Book a consultation\nunlock operational intelligence.",
