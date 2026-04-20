@@ -13,14 +13,14 @@ export default function Footer() {
         <footer className="relative pt-[246px] bg-linear-to-b from-background via-gradient-purple-start/50 to-gradient-purple-start/85 ">
             {/* CTA */}
             <div className="w-full absolute -top-36 sm:-top-6 md:-top-10 xl:-top-30 left-0">
-                <Container>
+                {/* <Container>
                     <CtaGradientCard
                         title={data.cta.title}
                         buttonLabel={data.cta.buttonLabel}
                         href={data.cta.href}
                         image={data.cta.image}
                     />
-                </Container>
+                </Container> */}
             </div>
 
             {/* main footer content */}
