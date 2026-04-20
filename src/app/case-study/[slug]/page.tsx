@@ -1,20 +1,20 @@
 import { notFound } from "next/navigation";
-import OperationDetails from "@/components/pages/case-study-sections/CaseStudyDetails";
+import CaseStudyDetails from "@/components/pages/case-study-sections/CaseStudyDetails";
 import { caseStudy } from "@/data/case-study";
 
 export function generateStaticParams() {
     return caseStudy.map((o) => ({ id: o.id }));
 }
 
-export default async function OperationDetailsPage({
+export default async function CaseStudyDetailsPage({
     params,
 }: {
-    params: Promise<{ id: string }>;
+    params: Promise<{ slug: string }>;
 }) {
-    const { id } = await params;
-    const item = caseStudy.find((o) => o.id === id);
+    const { slug } = await params;
+    const item = caseStudy.find((o) => o.id === slug);
 
     if (!item) return notFound();
 
-    return <OperationDetails item={item} />;
+    return <CaseStudyDetails item={item} />;
 }

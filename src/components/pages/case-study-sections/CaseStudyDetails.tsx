@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { CaseStudyBlock, CaseStudyItem } from "@/data/case-study";
 import { cn } from "@/lib/cn";
+import Container from "@/components/shared/Container";
+import Heading from "@/components/shared/Heading";
 
 function Block({ block }: { block: CaseStudyBlock }) {
     if (block.type === "paragraph") {
@@ -46,11 +48,12 @@ function Block({ block }: { block: CaseStudyBlock }) {
 
 export default function CaseStudyDetails({ item }: { item: CaseStudyItem }) {
     return (
-        <section className="py-12">
-            <div className="mx-auto max-w-3xl px-4">
-                <h1 className="text-center whitespace-pre-line text-2xl sm:text-3xl font-semibold leading-tight">
-                    {item.detailsTitle}
-                </h1>
+        <section>
+            <Container className="max-w-[898px] pt-30 md:pt-46 lg:pt-50 pb-50 sm:pb-30 lg:pb-50">
+                <Heading className="text-center">
+                    Transforming Operational Efficiency Through Intelligent
+                    Systems
+                </Heading>
 
                 {/* Top pill nav */}
                 <div className="mt-6 flex justify-center">
@@ -94,7 +97,7 @@ export default function CaseStudyDetails({ item }: { item: CaseStudyItem }) {
                         </div>
                     ))}
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

@@ -31,7 +31,7 @@ export default function TermsOfUse() {
     return (
         <section>
             {/* narrow center column */}
-            <Container className="max-w-[1250px] pt-24 md:pt-36 2xl:pt-50 pb-40 md:pb-50 2xl:pb-44.5 space-y-2 md:space-y-3 xl:space-y-5">
+            <Container className="max-w-[1250px] pt-30 md:pt-46 lg:pt-50 pb-50 sm:pb-30 lg:pb-50 2xl:pb-44.5 space-y-2 md:space-y-3 xl:space-y-5">
                 <div className="space-y-2 md:space-y-3 xl:space-y-5">
                     <Heading>{data.title}</Heading>
                     <div>

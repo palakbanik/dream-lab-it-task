@@ -23,7 +23,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 const iconBGClasses: Record<IconBG, string> = {
     white: "bg-foreground text-custom-black ",
-    black: "bg-custom-black text-foreground ",
+    black: "bg-custom-black text-foreground group-hover:bg-foreground group-hover:text-background",
     gray: "bg-card-gray-btn-secondary text-foreground group-hover:bg-card-gray-btn-secondary",
 };
 

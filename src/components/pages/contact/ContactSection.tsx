@@ -1,191 +1,200 @@
 import Link from "next/link";
-import { contactSectionData } from "@/data/contact";
+import {
+    contactInfo,
+    contactSectionData,
+    contactSocialLinks,
+} from "@/data/contact";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
-import { FiArrowUpRight } from "react-icons/fi";
-import {
-    RiInstagramLine,
-    RiLinkedinLine,
-    RiFacebookCircleLine,
-    RiTwitterXLine,
-} from "react-icons/ri";
+import { FiArrowRight } from "react-icons/fi";
 import Button from "@/components/ui/Button";
-
-function SocialIcon({
-    type,
-}: {
-    type: "instagram" | "facebook" | "linkedin" | "x";
-}) {
-    const className = "h-5 w-5";
-    switch (type) {
-        case "instagram":
-            return <RiInstagramLine className={className} />;
-        case "facebook":
-            return <RiFacebookCircleLine className={className} />;
-        case "linkedin":
-            return <RiLinkedinLine className={className} />;
-        case "x":
-            return <RiTwitterXLine className={className} />;
-    }
-}
+import Container from "@/components/shared/Container";
+import SubHeading from "@/components/shared/SubHeading";
+import Paragraph from "@/components/shared/Paragraph";
+import Image from "next/image";
+import { PiHeadphonesBold } from "react-icons/pi";
 
 export default function ContactSection() {
     const { left, right } = contactSectionData;
 
     return (
-        <section className="relative py-14">
-            {/* subtle glow like screenshot */}
-            <div className="pointer-events-none absolute inset-x-0 -top-10 mx-auto h-64 max-w-5xl rounded-full bg-gradient-to-r from-accent-green/0 via-accent-green/10 to-accent-green/0 blur-3xl" />
-
-            <div className="mx-auto w-full max-w-5xl px-4">
-                <div className="rounded-3xl p-[1px] bg-gradient-to-br from-gradient-purple-start/70 via-accent-blue/20 to-accent-aqua/35">
-                    <div className="rounded-3xl bg-custom-black/55 backdrop-blur border border-border/60">
-                        <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
-                            {/* LEFT */}
-                            <div className="p-6 sm:p-8">
-                                <h2 className="whitespace-pre-line text-2xl sm:text-3xl font-semibold leading-tight">
-                                    {left.title}
-                                </h2>
-
-                                <div className="mt-5">
-                                    <Link href={left.cta.href}>
-                                        <Button
-                                            icon={<FiArrowUpRight />}
-                                            className="px-5"
-                                        >
-                                            {left.cta.label}
-                                        </Button>
-                                    </Link>
-                                </div>
-
-                                <div className="mt-10 space-y-8">
-                                    {left.blocks.map((block) => (
-                                        <div key={block.heading}>
-                                            <p className="text-sm font-semibold text-foreground">
-                                                {block.heading}
-                                            </p>
-
-                                            {/* {"items" in block && (
-                                                <div className="mt-3 space-y-2">
-                                                    {block.items.map((item) => (
-                                                        <div
-                                                            key={item.label}
-                                                            className="text-sm"
-                                                        >
-                                                            <span className="text-muted-foreground-primary">
-                                                                {item.label}
-                                                                :{" "}
-                                                            </span>
-                                                            {item.href ? (
-                                                                <a
-                                                                    className="text-foreground hover:underline underline-offset-4"
-                                                                    href={
-                                                                        item.href
-                                                                    }
-                                                                >
-                                                                    {item.value}
-                                                                </a>
-                                                            ) : (
-                                                                <span className="text-foreground">
-                                                                    {item.value}
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
-
-                                            {"socials" in block && (
-                                                <div className="mt-3 flex items-center gap-3">
-                                                    {block.socials.map((s) => (
-                                                        <a
-                                                            key={s.label}
-                                                            href={s.href}
-                                                            aria-label={s.label}
-                                                            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-white/5 text-foreground hover:bg-white/10 transition"
-                                                        >
-                                                            <SocialIcon
-                                                                type={s.icon}
-                                                            />
-                                                        </a>
-                                                    ))}
-                                                </div>
-                                            )} */}
+        <div>
+            <Container>
+                <div className="sm:px-6 lg:px-10">
+                    <div className="gradient-border">
+                        <div className="bg-[#222222]/50 ">
+                            <div className="flex flex-col lg:flex-row justify-between">
+                                {/* left contact info */}
+                                <div className="p-4 sm:p-12 flex flex-col justify-between">
+                                    <div className="space-y-[26px] xl:space-y-[30px] ">
+                                        <div className="max-w-[282px]">
+                                            <SubHeading>
+                                                <span className="text-[#636363]">
+                                                    Book a consultation
+                                                </span>{" "}
+                                                unlock operational intelligence.
+                                            </SubHeading>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
 
-                            {/* RIGHT (FORM CARD) */}
-                            <div className="p-6 sm:p-8 lg:border-l lg:border-border/60">
-                                <div className="rounded-2xl bg-white/5 border border-border/60 p-6 sm:p-7">
-                                    <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/5 px-3 py-1 text-xs text-muted-foreground-secondary">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-accent-pink" />
-                                        {right.badge}
+                                        <Link href={left.cta.href}>
+                                            <Button icon={<PiHeadphonesBold />}>
+                                                {left.cta.label}
+                                            </Button>
+                                        </Link>
                                     </div>
 
-                                    <h3 className="mt-4 whitespace-pre-line text-xl sm:text-2xl font-semibold leading-snug">
-                                        {right.title}
-                                    </h3>
+                                    <div className="mt-10 space-y-8">
+                                        <div className="space-y-6 md:space-y-12.5">
+                                            <div className="space-y-2.5 md:space-y-5">
+                                                <SubHeading>
+                                                    Contact Details
+                                                </SubHeading>
 
-                                    <form
-                                        className="mt-6 space-y-4"
-                                        action="#"
-                                        method="post"
-                                    >
-                                        {right.fields.map((f) => (
-                                            <div
-                                                key={f.name}
-                                                className="space-y-2"
-                                            >
-                                                <label
-                                                    className="text-xs text-muted-foreground-secondary"
-                                                    htmlFor={f.name}
-                                                >
-                                                    {f.label}
-                                                </label>
-
-                                                {f.type === "textarea" ? (
-                                                    <Textarea
-                                                        id={f.name}
-                                                        name={f.name}
-                                                        required={f.required}
-                                                        placeholder={
-                                                            f.placeholder
-                                                        }
-                                                    />
-                                                ) : (
-                                                    <Input
-                                                        id={f.name}
-                                                        name={f.name}
-                                                        type={f.type}
-                                                        required={f.required}
-                                                        placeholder={
-                                                            f.placeholder
-                                                        }
-                                                    />
-                                                )}
+                                                <div>
+                                                    {contactInfo.map(
+                                                        (info, i) => (
+                                                            <Link
+                                                                key={i}
+                                                                href={info.href}
+                                                            >
+                                                                <Paragraph className="flex items-center gap-2.5">
+                                                                    <span>
+                                                                        <Image
+                                                                            src={
+                                                                                info.src
+                                                                            }
+                                                                            alt={
+                                                                                info.alt
+                                                                            }
+                                                                            width={
+                                                                                0
+                                                                            }
+                                                                            height={
+                                                                                0
+                                                                            }
+                                                                            draggable={
+                                                                                false
+                                                                            }
+                                                                            className="w-[20px] h-[20px] md:w-[25px] md:h-[25px]"
+                                                                        />
+                                                                    </span>
+                                                                    <span>
+                                                                        {
+                                                                            info.label
+                                                                        }
+                                                                    </span>
+                                                                </Paragraph>
+                                                            </Link>
+                                                        ),
+                                                    )}
+                                                </div>
                                             </div>
-                                        ))}
+                                            <div className="space-y-2.5 md:space-y-5">
+                                                <SubHeading>
+                                                    Social links
+                                                </SubHeading>
 
-                                        <div className="pt-2">
-                                            <Button
-                                                type="submit"
-                                                icon={<FiArrowUpRight />}
-                                                className="w-full justify-between px-5"
-                                            >
-                                                {right.submitLabel}
-                                            </Button>
+                                                <div className="flex items-center gap-2.5">
+                                                    {contactSocialLinks.map(
+                                                        (info, i) => (
+                                                            <Link
+                                                                href={info.href}
+                                                                key={i}
+                                                            >
+                                                                <Image
+                                                                    src={
+                                                                        info.src
+                                                                    }
+                                                                    alt={
+                                                                        info.alt
+                                                                    }
+                                                                    width={0}
+                                                                    height={0}
+                                                                    draggable={
+                                                                        false
+                                                                    }
+                                                                    className="w-[32px] h-[32px] md:w-[48px] xl:h-[48px] "
+                                                                />
+                                                            </Link>
+                                                        ),
+                                                    )}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </form>
+                                    </div>
+                                </div>
+
+                                {/* right form card */}
+                                <div className="p-4 sm:p-8  grid place-items-center lg:place-items-stretch">
+                                    <div className="w-full max-w-[731px] rounded-lg md:rounded-xl lg:rounded-2xl bg-[#1A1A1A] backdrop-blur-[20px] p-4 sm:p-7 2xl:p-[58px]">
+                                        <span className="capitalize rounded-full border border-foreground px-3 p-1.5 xl:px-[15px] xl:py-[12px] text-xs xl:text-lg text-muted-foreground-secondary">
+                                            contact us
+                                        </span>
+
+                                        <h3 className="mt-4 xl:mt-[30px]  text-lg sm:text-2xl 2xl:text-[42px] font-semibold leading-snug xl:leading-[1.2]">
+                                            Let&apos;s discuss how we can
+                                            transform your operations with
+                                            intelligent systems.
+                                        </h3>
+
+                                        <form className="mt-4 xl:mt-[50px] space-y-4">
+                                            {right.fields.map((f) => (
+                                                <div
+                                                    key={f.name}
+                                                    className="md:space-y-2"
+                                                >
+                                                    <label
+                                                        className="text-xs sm:text-sm lg:text-base text-muted-foreground-secondary/30"
+                                                        htmlFor={f.name}
+                                                    >
+                                                        {f.label}
+                                                    </label>
+
+                                                    {f.type === "textarea" ? (
+                                                        <Textarea
+                                                            id={f.name}
+                                                            name={f.name}
+                                                            required={
+                                                                f.required
+                                                            }
+                                                            placeholder={
+                                                                f.placeholder
+                                                            }
+                                                        />
+                                                    ) : (
+                                                        <Input
+                                                            id={f.name}
+                                                            name={f.name}
+                                                            type={f.type}
+                                                            required={
+                                                                f.required
+                                                            }
+                                                            placeholder={
+                                                                f.placeholder
+                                                            }
+                                                        />
+                                                    )}
+                                                </div>
+                                            ))}
+
+                                            <div className="inline-block xl:mt-[50px]">
+                                                <Button
+                                                    type="submit"
+                                                    variant="white"
+                                                    iconVariant="black"
+                                                    icon={<FiArrowRight />}
+                                                >
+                                                    {right.submitLabel}
+                                                </Button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                            {/* /RIGHT */}
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </Container>
+        </div>
     );
 }

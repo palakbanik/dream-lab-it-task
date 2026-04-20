@@ -16,6 +16,7 @@ export function CaseStudyCard({ item }: { item: CaseStudyItem }) {
                     alt={item.cardImage.alt}
                     width={440}
                     height={405}
+                    loading="eager"
                     className="transition-transform w-full h-full duration-300 group-hover:scale-[1.08] object-cover"
                 />
             </div>

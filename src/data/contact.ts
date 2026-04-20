@@ -27,6 +27,33 @@ export type ContactField =
           rows?: number;
       };
 
+export const contactInfo = [
+    {
+        src: "/icons/phone.svg",
+        alt: "Phone",
+        label: "+966 000 115666",
+        href: "tel:+966000115666",
+    },
+    {
+        src: "/icons/mail.svg",
+        alt: "Email",
+        label: "info@beyondcode.ae",
+        href: "mailto:info@beyondcode.ae",
+    },
+    {
+        src: "/icons/location.svg",
+        alt: "Location",
+        label: "Abu Dhabi, UAE",
+        href: "https://maps.google.com/?q=Abu+Dhabi,UAE",
+    },
+];
+
+export const contactSocialLinks = [
+    { href: "/", src: "/icons/instagram.svg", alt: "Instagram" },
+    { href: "/", src: "/icons/facebook.svg", alt: "Facebook" },
+    { href: "/", src: "/icons/tiktok.svg", alt: "TikTok" },
+];
+
 export const contactSectionData = {
     left: {
         title: "Book a consultation\nunlock operational intelligence.",

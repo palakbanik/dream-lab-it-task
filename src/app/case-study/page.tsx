@@ -6,7 +6,7 @@ import { caseStudy } from "@/data/case-study";
 export default function CaseStudy() {
     return (
         <section>
-            <Container className="pt-24 md:pt-36 2xl:pt-50 pb-50 sm:pb-30 lg:pb-50">
+            <Container className="pt-30 md:pt-46 lg:pt-50 pb-50 sm:pb-30 lg:pb-50">
                 <div className="px-4 sm:px-6 lg:px-10">
                     <Heading className="text-center">
                         Transforming operations through

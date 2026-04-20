@@ -51,7 +51,7 @@ export const caseStudy: CaseStudyItem[] = [
                     },
                     {
                         type: "image",
-                        src: "/operations/details/ai-cube.jpg",
+                        src: "/images/case-study-imgs/details/ai-cube.jpg",
                         alt: "AI cube",
                         aspectClass: "aspect-[16/8]",
                     },
@@ -87,7 +87,7 @@ export const caseStudy: CaseStudyItem[] = [
                     },
                     {
                         type: "image",
-                        src: "/operations/details/robot.jpg",
+                        src: "/images/case-study-imgs/details/robot.jpg",
                         alt: "Robot",
                         aspectClass: "aspect-[16/9]",
                     },
@@ -138,7 +138,7 @@ export const caseStudy: CaseStudyItem[] = [
                     },
                     {
                         type: "image",
-                        src: "/operations/details/hands.jpg",
+                        src: "/images/case-study-imgs/details/hands.jpg",
                         alt: "Hands and automation",
                         aspectClass: "aspect-[16/9]",
                     },

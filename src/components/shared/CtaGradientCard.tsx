@@ -13,12 +13,7 @@ type Props = {
     className?: string;
 };
 
-export default function CtaGradientCard({
-    title,
-
-    image,
-    className,
-}: Props) {
+export default function CtaGradientCard({ title, image, className }: Props) {
     return (
         <div
             className={cn(
@@ -42,13 +37,14 @@ export default function CtaGradientCard({
                 </div>
 
                 {/* Right image */}
-                <div className="flex-1">
+                <div className="w-full flex-1">
                     <Image
                         src={image.src}
                         alt={image.alt}
-                        className="object-cover rounded-[10px] md:rounded-[20px] w-full"
                         width={411}
                         height={232}
+                        loading="eager"
+                        className="object-cover rounded-[10px] md:rounded-[20px] w-full"
                     />
                 </div>
             </div>
