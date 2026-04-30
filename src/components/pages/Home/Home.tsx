@@ -9,6 +9,8 @@ import Deliverables from "./deliverables/Deliverables";
 import DeploymentModals from "./deployment-models/DeploymentModals";
 import HeroFAQSection from "./hero-faq-section/HeroFAQSection";
 import CaseStudy from "./case-study/CaseStudy";
+import Leadership from "@/components/pages/contact/Leadership";
+import Ownership from "./ownership/Ownership";
 
 export default function Home() {
     return (
@@ -22,6 +24,8 @@ export default function Home() {
             <Deliverables />
             <ImplementationProcess />
             <DeploymentModals />
+            <Ownership />
+            <Leadership />
             <CaseStudy />
             <HeroFAQSection />
         </div>
