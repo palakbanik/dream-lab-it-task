@@ -63,8 +63,12 @@ export default function ImplementationProcess() {
                     </div>
 
                     <div className="mt-[30px] sm:mt-[40px] xl:mt-[50px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[10px]">
-                        {processCardsData.map((card, i) => (
-                            <GradientCard key={i} {...card} className="pt-[50px] rounded-[5px]" />
+                        {processCardsData.map((processData, i) => (
+                            <GradientCard
+                                key={i}
+                                {...processData}
+                                className="pt-[50px] rounded-[5px]"
+                            />
                         ))}
                     </div>
                 </div>
