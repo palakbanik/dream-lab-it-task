@@ -3,19 +3,18 @@ import Container from "@/components/shared/Container";
 import FeatureCard from "@/components/shared/FeatureCard";
 import Button from "@/components/ui/Button";
 import { featureData, heroData } from "@/data/data";
+import Image from "next/image";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
+import heroBG from "@/public/home-hero-bg.svg";
 
 export default function Hero() {
     return (
-        <section
-            style={{
-                backgroundImage: 'url("/home-hero-bg.svg")',
-                backgroundSize: "cover",
-                backgroundPosition: "top",
-                backgroundRepeat: "no-repeat",
-            }}
-            className="relative min-h-screen overflow-hidden"
-        >
+        <section className="relative min-h-screen overflow-hidden">
+            <Image
+                src={heroBG}
+                alt="Hero background"
+                className="object-cover pointer-events-none absolute top-0 left-0 w-full h-full -z-20"
+            />
             {/* background blob */}
             <div className="absolute -top-1/2 left-1/2 -translate-x-1/2 w-256.5 h-162 bg-accent-pink/50 rounded-full blur-[200px] -z-10 pointer-events-none" />
             <div className="absolute -top-1/2 left-1/2 -translate-x-1/2 w-391 h-162 bg-accent-light-blue/30 rounded-full blur-[150px] -z-11 pointer-events-none" />

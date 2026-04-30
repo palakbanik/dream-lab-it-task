@@ -10,6 +10,8 @@ import { PiHeadphonesBold } from "react-icons/pi";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { TbWorld } from "react-icons/tb";
 
+import logo from "@/public/logo.svg";
+
 type HeaderProps = {
     label: string;
     href: string;
@@ -39,8 +41,8 @@ export default function Header() {
                         {/* logo */}
                         <Link href={"/"}>
                             <Image
-                                src={"/logo.svg"}
-                                alt="logo"
+                                src={logo}
+                                alt="BC logo"
                                 draggable={false}
                                 width={50}
                                 height={30}

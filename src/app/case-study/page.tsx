@@ -1,4 +1,4 @@
-import { CaseStudyCard } from "@/components/pages/case-study-sections/CaseStudyCard";
+import { CaseStudyCard } from "@/components/shared/CaseStudyCard";
 import Container from "@/components/shared/Container";
 import Heading from "@/components/shared/Heading";
 import { caseStudy } from "@/data/case-study";

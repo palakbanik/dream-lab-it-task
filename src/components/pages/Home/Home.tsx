@@ -5,6 +5,12 @@ import OurCoreSystems from "./our-core-systems/OurCoreSystems";
 import ServiceAndExpertise from "./service-and-expertise/ServiceAndExpertise";
 import TechnologyStack from "./technology-stack/TechnologyStack";
 import ImplementationProcess from "./implementation-process/ImplementationProcess";
+import Deliverables from "./deliverables/Deliverables";
+import DeploymentModals from "./deployment-models/DeploymentModals";
+import HeroFAQSection from "./hero-faq-section/HeroFAQSection";
+import CaseStudy from "./case-study/CaseStudy";
+import Leadership from "@/components/pages/contact/Leadership";
+import Ownership from "./ownership/Ownership";
 
 export default function Home() {
     return (
@@ -15,7 +21,13 @@ export default function Home() {
             <OurCoreSystems />
             <ServiceAndExpertise />
             <TechnologyStack />
+            <Deliverables />
             <ImplementationProcess />
+            <DeploymentModals />
+            <Ownership />
+            <Leadership />
+            <CaseStudy />
+            <HeroFAQSection />
         </div>
     );
 }

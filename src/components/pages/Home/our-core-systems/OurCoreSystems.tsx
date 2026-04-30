@@ -5,8 +5,9 @@ import { PiHeadphonesBold } from "react-icons/pi";
 import CoreSystemCard from "./CoreSystemCard";
 import { coreSystemsData } from "@/data/CoreSystemCardData";
 import Image from "next/image";
-import bgBlog from "@/public/core-systems-blobs-bg.svg";
 import InstitutionalImpact from "./InstitutionalImpact";
+
+import bgBlog from "@/public/core-systems-blobs-bg.svg";
 
 export default function OurCoreSystems() {
     return (
