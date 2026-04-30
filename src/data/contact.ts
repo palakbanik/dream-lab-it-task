@@ -1,3 +1,10 @@
+import phoneIcon from "@/public/icons/phone.svg";
+import mailIcon from "@/public/icons/mail.svg";
+import locationIcon from "@/public/icons/location.svg";
+import instagramIcon from "@/public/icons/instagram.svg";
+import facebookIcon from "@/public/icons/facebook.svg";
+import tiktokIcon from "@/public/icons/tiktok.svg";
+
 export type ContactDetail = {
     label: string;
     value: string;
@@ -29,19 +36,19 @@ export type ContactField =
 
 export const contactInfo = [
     {
-        src: "/icons/phone.svg",
+        src: phoneIcon,
         alt: "Phone",
         label: "+966 000 115666",
         href: "tel:+966000115666",
     },
     {
-        src: "/icons/mail.svg",
+        src: mailIcon,
         alt: "Email",
         label: "info@beyondcode.ae",
         href: "mailto:info@beyondcode.ae",
     },
     {
-        src: "/icons/location.svg",
+        src: locationIcon,
         alt: "Location",
         label: "Abu Dhabi, UAE",
         href: "https://maps.google.com/?q=Abu+Dhabi,UAE",
@@ -49,9 +56,9 @@ export const contactInfo = [
 ];
 
 export const contactSocialLinks = [
-    { href: "/", src: "/icons/instagram.svg", alt: "Instagram" },
-    { href: "/", src: "/icons/facebook.svg", alt: "Facebook" },
-    { href: "/", src: "/icons/tiktok.svg", alt: "TikTok" },
+    { href: "/", src: instagramIcon, alt: "Instagram" },
+    { href: "/", src: facebookIcon, alt: "Facebook" },
+    { href: "/", src: tiktokIcon, alt: "TikTok" },
 ];
 
 export const contactSectionData = {

@@ -1,7 +1,12 @@
+import { StaticImageData } from "next/image";
+import leaderOneImage from "@/public/images/leaders/leader-one.jpg";
+import leaderTwoImage from "@/public/images/leaders/leader-two.jpg";
+import leaderThreeImage from "@/public/images/leaders/leader-three.jpg";
+
 export type Leader = {
     name: string;
     role: string;
-    imageSrc: string;
+    imageSrc: StaticImageData;
 };
 
 export const leadershipData = {
@@ -12,17 +17,17 @@ export const leadershipData = {
         {
             name: "Reem Aljeali",
             role: "Director, Operations\n\nOperational Intelligence and Systems Strategist",
-            imageSrc: "/images/leaders/leader-one.jpg",
+            imageSrc: leaderOneImage,
         },
         {
             name: "Mohammed Alyfatai",
             role: "Head of Strategy\n\nIntelligent Systems and AI Infrastructure Architect",
-            imageSrc: "/images/leaders/leader-two.jpg",
+            imageSrc: leaderTwoImage,
         },
         {
             name: "Yasir Arafat",
             role: "Technology Advisor\n\nIntelligent Systems and AI Infrastructure Architect",
-            imageSrc: "/images/leaders/leader-three.jpg",
+            imageSrc: leaderThreeImage,
         },
     ] satisfies Leader[],
 };

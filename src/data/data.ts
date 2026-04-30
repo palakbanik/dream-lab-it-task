@@ -1,10 +1,6 @@
 import { PiArrowRightBold, PiHeadphonesBold } from "react-icons/pi";
-import { FaCheck } from "react-icons/fa";
 
-// export type Feature = {
-//     title: string;
-//     icon: IconType;
-// };
+import robotHand from "@/public/images/robot-hand.png"
 
 export const heroData = {
     title: {
@@ -38,7 +34,7 @@ export const featureData = [
 
 export const whoWeAreData = {
     image: {
-        src: "/images/robot-hand.png",
+        src: robotHand,
         alt: "Robotic hand holding a green sphere",
     },
     heading: "Who We Are",

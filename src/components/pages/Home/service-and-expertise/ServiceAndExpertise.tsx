@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button";
 import { servicesData } from "@/data/services-and-expertise";
 import React from "react";
 import { FiArrowRight } from "react-icons/fi";
-import ServiceAndExpertiseCard from "./ServiceAndExpertiseCard";
+import GradientCard from "../../../shared/GradientCard";
 
 export default function ServiceAndExpertise() {
     return (
@@ -20,7 +20,7 @@ export default function ServiceAndExpertise() {
 
                 <div className="mt-[30px] sm:mt-[40px] xl:mt-[50px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[10px]">
                     {servicesData.map((service, i) => (
-                        <ServiceAndExpertiseCard key={i} {...service} />
+                        <GradientCard key={i} {...service} />
                     ))}
                 </div>
             </Container>

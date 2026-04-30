@@ -5,27 +5,6 @@ import SubHeading from "@/components/shared/SubHeading";
 import { beyondData } from "@/data/beyond";
 import Image from "next/image";
 
-const betyondData = [
-    {
-        title: "The Real Problem",
-        desc: "The issue in modern institutions is not technology - it is lack of operational intelligence.",
-        src: "/icons/problem.svg",
-        bgGradient: "from-[#00D1FF]/50 via-[#FF09F4]/80 to-[#2D7FFF]/40",
-    },
-    {
-        title: "Common Industry Problems",
-        desc: "Digital tools without workflow change • Dashboards without governance • AI without impact • Automation without execution",
-        src: "/icons/industry.svg",
-        bgGradient: " from-[#00D1FF]/50 via-[#2D7FFF]/80 to-[#2D7FFF]/40",
-    },
-    {
-        title: "Our Solution",
-        desc: "Beyond Code builds structured intelligence systems that integrate directly into institutional operations.",
-        src: "/icons/solution.svg",
-        bgGradient: "from-[#00D1FF]/50 via-[#05E388]/90 to-[#2D7FFF]/40",
-    },
-];
-
 export default function Beyond() {
     return (
         <div>
@@ -54,6 +33,7 @@ export default function Beyond() {
                                             height={36}
                                             draggable={false}
                                             className="z-10 w-[35px] h-[36px]"
+                                            priority
                                         />
                                     </div>
                                 </div>

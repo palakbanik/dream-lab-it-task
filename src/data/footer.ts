@@ -1,3 +1,6 @@
+import footerRobot from "@/public/images/footer-robot.png";
+import { StaticImageData } from "next/image";
+
 export type FooterLink = {
     label: string;
     href: string;
@@ -21,7 +24,7 @@ export type FooterData = {
         title: string;
         buttonLabel: string;
         href: string;
-        image: { src: string; alt: string };
+        image: { src: StaticImageData; alt: string };
     };
 };
 
@@ -70,6 +73,6 @@ export const footerData: FooterData = {
         title: "Transform Your Operations\nwith Intelligence",
         buttonLabel: "Book for Consultation",
         href: "#",
-        image: { src: "/images/footer-robot.png", alt: "AI in operations" },
+        image: { src: footerRobot, alt: "AI in operations" },
     },
 };
