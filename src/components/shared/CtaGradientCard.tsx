@@ -1,5 +1,5 @@
 import { cn } from "@/lib/cn";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import Heading from "../shared/Heading";
@@ -9,7 +9,7 @@ type Props = {
     title: string;
     buttonLabel: string;
     href: string;
-    image: { src: string; alt: string };
+    image: { src: StaticImageData; alt: string };
     className?: string;
 };
 
