@@ -71,14 +71,14 @@ body {
 @layer utilities {
     .gradient-border {
         position: relative;
-        border-radius: 30px;
+        border-radius: inherit;
     }
 
     .gradient-border::before {
         content: "";
         position: absolute;
         inset: 0;
-        border-radius: 30px;
+        border-radius: inherit;
         padding: 2px;
         background: linear-gradient(
             to right,
@@ -98,13 +98,13 @@ body {
 
     @media (max-width: 768px) {
         .gradient-border {
-            border-radius: 16px;
+            border-radius: inherit;
         }
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
         .gradient-border {
-            border-radius: 20px;
+            border-radius: inherit;
         }
     }
 }
